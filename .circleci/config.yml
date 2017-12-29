@@ -6,21 +6,22 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Preparation
+          command: |
+            curl -fsSL https://clis.ng.bluemix.net/install/linux | sh
+            bx api https://api.ng.bluemix.net
+            bx login -u $BMX_USER -p $BMX_PASS -o $BMX_ORG -s dev > /dev/null 2>&1
+      - run:
           name: System Information
           command: |
-            pwd
             ls -la
             echo "node: $(node -v)"
             echo "npm: $(npm -v)"
-            echo "yarn $(yarn -v)"
+            echo "yarn: $(yarn -v)"
+            echo "bmx: $(bx -v)"
       - run:
           name: Build
           command: npm run build
       - run:
           name: Deploy
-          command: |
-            pwd
-            ls -la
-            echo "node: $(node -v)"
-            echo "npm: $(npm -v)"
-            echo "yarn $(yarn -v)"
+          command: npm run deploy > /dev/null 2>&1
