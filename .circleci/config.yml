@@ -5,5 +5,11 @@ jobs:
       - image: circleci/node:8.9.1
     steps:
       - checkout
-      - run: echo "hello world"
+      - run:
+          name: System Information
+          command: |
+            pwd
+            echo "node: $(node -v)"
+            echo "npm: $(npm -v)"
+            echo "yarn $(yarn -v)"
         
