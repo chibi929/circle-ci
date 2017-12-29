@@ -1,0 +1,13 @@
+{
+  "name": "circle-ci",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:chibi929/circle-ci.git",
+  "author": "chibi929 <ibihc929@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "touch .build",
+    "deploy": "bx app push",
+    "start": "node index.js"
+  }
+}

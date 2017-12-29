@@ -1,0 +1,7 @@
+applications:
+- path: .
+  name: circleci-test
+  domain: mybluemix.net
+  random-route: false
+  instances: 1
+  memory: 64M

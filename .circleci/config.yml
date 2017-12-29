@@ -9,7 +9,18 @@ jobs:
           name: System Information
           command: |
             pwd
+            ls -la
             echo "node: $(node -v)"
             echo "npm: $(npm -v)"
             echo "yarn $(yarn -v)"
-        
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Deploy
+          command: |
+            pwd
+            ls -la
+            echo "node: $(node -v)"
+            echo "npm: $(npm -v)"
+            echo "yarn $(yarn -v)"
