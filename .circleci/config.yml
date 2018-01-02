@@ -27,10 +27,13 @@ jobs:
           command: npm run deploy > /dev/null 2>&1
 workflows:
    version: 2
-   nightly:
+   mastary:
+     jobs:
+       - build
+   regularly:
      triggers:
        - schedule:
-           cron: "*/1 * * * *"
+           cron: "0 0 * * *"
            filters:
              branches:
                only:
